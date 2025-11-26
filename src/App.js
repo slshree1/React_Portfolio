@@ -20,7 +20,7 @@ function AnimatedRoutes(){
     return(
         <AnimatePresence>
             <Routes>
-                <Route path='/React_Portfolio' element={<Homepage />} />
+                <Route path='/' element={<Homepage />} />
                 <Route path='/About' element={<About />} />
                 <Route path='/Skills' element={<Skills />} />
                 <Route path='/Experience' element={<Experience />} />
