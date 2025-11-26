@@ -57,7 +57,7 @@ function App() {
       )}
 
       {!showPopup && (
-        <Router>
+        <Router basename='React_Portfolio'>
           <Navbar />
           <div className='mainContent'>
             <AnimatedRoutes />
