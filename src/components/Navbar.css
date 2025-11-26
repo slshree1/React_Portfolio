@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    z-index: 1000;
+    height: 90px;
+    width: 100%;
+    background-color: rgb(38, 39, 65);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-left: 30px;
+    display: flex;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.logo:hover{
+    
+    transform: scale(1.05);
+}
+
+#firstName{
+    color: white;
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+#lastName{
+    color: rgb(113, 104, 104);
+    font-size: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menuItems{
+    
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu{
+    display: flex;
+    gap: 40px;
+    margin-right: 90px;
+    /* justify-content: center; */
+    align-items: center;
+}
+.menuItems li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+}
+.menuItems li a:hover{
+    color: rgb(118, 118, 118);
+}
+
+.menuItems li{
+    transition: all 0.2s ease-in-out;
+}
+
+.menuItems li:active{
+    /* color: rgb(73, 161, 73); */
+    transform: scale(0.8);
+}
+
+.sllogin{
+    margin-left: 30px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    /* box-shadow: 6px 6px 10px rgb(0, 0, 0); */
+}
+.sllogin:hover{
+    transform: scale(1.08);
+    background-color: rgb(97, 102, 95);
+    box-shadow: 1px 5px 25px rgba(255, 254, 254, 0.2);
+}
+.sllogin:active{
+    transform: scale(1);
+    background-color: rgb(73, 161, 73);
+    
+}
+
+
+
+.sllogin a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
