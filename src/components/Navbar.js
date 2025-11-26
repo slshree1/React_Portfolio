@@ -16,7 +16,7 @@ export default function Navbar() {
         </a>
         <div className='menu'>
             <ul className='menuItems'>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/React_Portfolio">Home</Link></li>
                 <li><Link to="/About">About</Link></li>
                 <li><Link to="/Skills">Skills</Link></li>
                 <li><Link to="/Experience">Experience</Link></li>
