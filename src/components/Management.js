@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './Management.css'
-
+import { motion } from 'framer-motion';
 export default function Management() {
 
     const [activeTab, setActiveTab]=useState('skills');
@@ -9,6 +9,12 @@ export default function Management() {
     }
     const [skillValue, setSkillValue] = useState(50);
   return (
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.5 }}
+    >
     <div className='page-management-container'>
       <div className='heading'>
         <h2>Pages Management</h2>
@@ -397,5 +403,6 @@ export default function Management() {
         </form>
       </div>
     </div>
+     </motion.div>
   )
 }
