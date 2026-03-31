@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.si-page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.si-card{
+    height: 700px;
+    width: 1200px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    position: relative;
+    animation: popupIn 0.3s ease forwards;
+    
+    padding: 20px;
+}
+.si-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 20px;
+    /* height: 650px; */
+    overflow-y: auto;
+    /* position: relative; */
+    padding: 20px;
+
+}
+.si-form h2{
+    font-size: 40px;
+}
+.si-form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.si-form-group input:not([type="checkbox"]), select{
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(165, 165, 165);
+    padding: 5px;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+.si-form-group input[type="checkbox"]{
+    width: 15px;
+    height: 15px;
+    transition: all 0.3s;
+}
+.si-form-group input:focus,select:focus{
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+.si-form-group textarea:focus{
+    border: 1px solid blue;
+        outline: none;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+.si-form-group label{
+    font-size: 20px;
+    /* font-weight: 500; */
+}
+.si-two-item-box{
+    display: flex;
+    gap: 20px;
+}
+.si-form-group textarea{
+    /* height: 100px; */
+    width: 500px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid rgb(165, 165, 165);
+    transition: all 0.3s;
+}
+.si-submit-btn{
+    width: 200px;
+    /* height: 40px; */
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(165, 165, 165);
+    background-color: rgb(124, 124, 248);
+}
+
+.si-form button{
+    /* height: 50px; */
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(124, 124, 248);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.si-form button:hover{
+    background-color: blue;
+}

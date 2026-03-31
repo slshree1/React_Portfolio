@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .footer{
     height: 520px;
@@ -15,7 +16,7 @@
     /* padding: 30px; */
 }
 .footerBox{
-    height: 350px;
+    height: 380px;
     width: 400px;
     /* border: 1px solid white; */
     border-radius: 10px;

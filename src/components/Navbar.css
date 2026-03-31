@@ -101,3 +101,9 @@
     color: white;
     font-size: 20px;
 }
+
+.active-nav{
+    border-bottom: 2px solid white;
+    transition: all 0.3s ease-in-out;
+}
+

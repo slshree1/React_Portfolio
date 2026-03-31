@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .page-management-container *{
     padding: 0;
     margin: 0;
@@ -12,11 +17,12 @@
     font-size: 50px;
 }
 .management-sections{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     /* align-items: center; */
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 50px;  
+    /* justify-content: center; */
+    padding: 75px;
+    /* padding-bottom: 50px;   */
     gap: 30px; 
 }
 .management-card{
@@ -50,6 +56,7 @@
 .management-card h2{
     font-weight: 600;
     font-size: 23px;
+    text-align: center;
 }
 
 
@@ -225,4 +232,136 @@
     transform: translateY(-5px);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: blue;
+}
+
+
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-left: 50px;
+}
+
+.project-tag {
+    background: rgb(86, 86, 252);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+
+
+
+
+.records-container{
+    padding: 30px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    margin: 20px 75px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* horizontal scrolling */
+.record-list{
+    width: 100%;
+    overflow-x: auto;
+    padding-top: 30px;
+}
+
+/* table layout */
+.record-table{
+    border-collapse: collapse;
+    min-width: max-content;   /* prevents shrinking */
+}
+
+
+.record-table th,
+.record-table td{
+    border: 1px solid black;
+    padding: 8px 12px;
+    white-space: nowrap;        /* keep single line */
+    overflow: hidden;
+    text-overflow: ellipsis;    /* show ... */
+    max-width: 200px;           /* prevent huge width */
+}
+
+/* ---------- ⭐ FIXED ACTION COLUMN ---------- */
+
+.action-col{
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    text-align: center;
+
+    position: sticky;   /* stay visible */
+    left: 0;
+    background: white;
+    z-index: 2;
+}
+
+/* header above body */
+thead .action-col{
+    z-index: 3;
+}
+
+/* delete button */
+.delete-btn{
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    background: white;
+    border-radius: 5px;
+}
+
+.delete-btn:hover{
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.delete-btn:active{
+    transform: scale(0.9);
+}
+
+
+
+.oldPass-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.oldPass-box input{
+    border: none;
+    height: 34px;
+}
+.oldPass-box:focus-within{
+    border: 1px solid blue;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+.oldPass-box input:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
 }

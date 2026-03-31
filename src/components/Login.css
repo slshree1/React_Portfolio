@@ -7,7 +7,6 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     gap: 50px;
     flex-direction: column;
@@ -18,17 +17,15 @@
     color: black;
 }
 .login-card{
-    height: 400px;
+    /* height: 400px; */
     width: 400px;
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     display: flex;
-    /* gap: 10px; */
-    /* justify-content: center; */
     align-items: center;
+    padding: 40px;
     flex-direction: column;
-    padding: 50px;
 }
 .login-card label{
     font-size: 20px;
@@ -40,7 +37,7 @@
     font-size: 25px;
     color: rgba(0, 0, 0, 0.5);
 }
-.login-card input{
+.login-card-input{
     height: 35px;
     padding: 5px;
     border-radius: 8px;
@@ -49,7 +46,7 @@
     transition: all 0.3s;
     
 }
-.login-card input:focus{
+.login-card-input:focus{
     outline: none;
     border: 1px solid blue;
 }
@@ -70,8 +67,116 @@
 .login-card button:focus{
     transform: scale(1);
 }
+.login-card a{
+    text-decoration: underline;
+    color: rgb(158, 158, 252);
+}
+.login-card a:hover{
+    cursor: pointer;
+}
 .inputfield-container{
     display: flex;
     flex-direction: column;
     width: 350px;
 }
+
+
+.forgot-pass-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.forgot-pass-card{
+    /* height: 400px; */
+    /* width: 400px; */
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.forgot-pass-close-btn{
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgb(203, 207, 255) ;
+    background-color: white;
+    transition: all 0.3s;
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(166, 166, 255);
+}
+.forgot-pass-close-btn:hover{
+    background-color: rgb(235, 235, 255);
+    color: blue;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* cursor: wait; */
+}
+.forgot-pass-card-section2{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.forgot-pass-card-section2 h2{
+    /* color: black; */
+    font-size: 30px;
+    color: rgb(132, 132, 132);
+}
+.forgot-pass-card-section2 p{
+
+    /* color: black; */
+    color: rgb(132, 132, 132);
+    width: 300px;
+    text-align: center;
+    font-size: 18px;
+}
+.forgot-pass-card-section2 button{
+    /* height: 40px; */
+    /* padding: 20px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* text-align: center; */
+    background-color: white;
+    border: 1px solid rgb(183, 188, 248) ;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.forgot-pass-card-section2 button:hover{
+    background-color: rgb(235, 235, 255);
+    color: blue;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.password-field{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 35px;
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 17px;
+    transition: all 0.3s;
+}
+.password-field input{
+    border: none;
+    height: 30px;
+    width: 320px;
+    padding: 5px;
+    font-size: 17px;
+}
+.password-field input:focus{
+    outline: none;
+}
+.password-field:focus-within{
+    border: 1px solid blue;
+}
+

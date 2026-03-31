@@ -20,13 +20,17 @@
 
 .education-section2{
     display: flex;
+    /* width: 300px; */
+    flex-wrap: wrap;
+    
+    /* grid-template-columns: repeat(3, 1fr); */
     padding: 80px;
     /* align-items: center; */
     justify-content: center;
     gap: 60px;
 }
-.education-section2-card{
-    width: 500px;
+.education-section2-card{ 
+    width: 600px;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
@@ -54,6 +58,11 @@
     font-size: 30px;
     color: white;
 }
+.education-card-logo img{
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+}
 .education-card-heading-content{
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +76,7 @@
     color: rgb(89, 89, 255);
     /* padding: 10px 15px; */
     background-color: rgb(223, 226, 253);
-    width: 150px;
+    width: 220px;
     height: 40px;
     display: flex;
     justify-content: center;
@@ -80,6 +89,71 @@
     align-items: center;    
     font-size: 18px;
 }
+
+.edu-doc-view{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(89, 89, 255);
+    background-color: rgb(50, 50, 245);
+    color: white;
+    transition: all 0.3s;
+}
+.edu-doc-view:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+
+
+
+.pdf-overlay {
+    position: fixed; 
+    inset: 0;
+    background: rgba(0,0,0,0.6); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 2000; 
+} 
+.pdf-modal{
+    height: 700px;
+    width: 1300px;
+    background-color: white;
+    padding-top: 10px;
+    display: flex;;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+.edu-pdf-close-btn{
+    align-self: flex-end;
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    
+    border: none;
+    /* background-color: rgb(200, 0, 0); */
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.edu-pdf-close-btn:hover{
+    background-color: rgb(142, 67, 234);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.pdf-viewer{
+    border-radius: 10px;
+}
+
+
+
+
+
 
 
 
@@ -240,4 +314,93 @@
 }
 .verification-card p{
     font-size: 15px;
+}
+
+
+
+.doc-request-page{
+   position: fixed; 
+    inset: 0;
+    background: rgba(0,0,0,0.6); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 2000; 
+    /* flex-direction: column; */
+}
+
+.doc-request-card{
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.doc-request-closebtn-box{
+    display: flex;
+    justify-content: space-between;
+}
+.doc-request-closebtn-box button{
+    border: none;
+    font-size: 25px;
+    background-color: white;
+    padding-right: 10px;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    color: rgb(175, 175, 175);
+}
+.doc-request-closebtn-box button:hover{
+    color: blue;
+}
+.doc-request-card form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.doc-request-card form label{
+    font-size: 25px;
+}
+.doc-request-card form input{
+    height: 45px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid rgb(149, 149, 149);
+    padding: 10px;
+    font-size: 25px;
+}
+.doc-request-card form textarea{
+    height: 200px;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(149, 149, 149);
+}
+
+.docreq-two-inp{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 80px;
+}
+.doc-req-inp-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.submit-btn-box{
+    display: flex;
+    justify-content: center;
+
+}
+.submit-btn-box input{
+    background-color: rgb(74, 74, 255);
+    color: white;
+    transition: all 0.3s;
+}
+.submit-btn-box input:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.5);
 }

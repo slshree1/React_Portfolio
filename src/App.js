@@ -13,6 +13,7 @@ import { AnimatePresence } from 'framer-motion';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Management from './components/Management';
+import Certifications from './components/Certifications';
 import React, { useState, useEffect } from "react";
 function AnimatedRoutes(){
 
@@ -27,6 +28,7 @@ function AnimatedRoutes(){
                 <Route path='/Experience' element={<Experience />} />
                 <Route path='/Projects' element={<Projects />} />
                 <Route path='/Education' element={<Education />} />
+                <Route path='/Certifications' element={<Certifications />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/Management' element={<Management/>}/>
