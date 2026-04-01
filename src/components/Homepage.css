@@ -308,14 +308,3 @@
   font-weight: 600;
   color: #000000;
 }
-
-.loading-screen {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0f172a;
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-}

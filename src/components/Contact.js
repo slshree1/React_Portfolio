@@ -19,6 +19,7 @@ export default function Contact() {
     subject: '',
     message: ''
   });
+  const [generalLoading, setGeneralLoading] = useState(false);
 
   const handleGeneralChange=(e)=>{
     const {name, value}=e.target;
@@ -30,6 +31,7 @@ export default function Contact() {
 
   const handleGeneralSubmit=async(e)=>{
     e.preventDefault();
+    setGeneralLoading(true);
     try{
       const response=await axios.post(
         "http://localhost:8080/sendGeneralMessage",
@@ -50,6 +52,8 @@ export default function Contact() {
     }catch(e){
       console.error(e);
       alert("Unable to send message");
+    } finally {
+      setGeneralLoading(false);
     }
   }
 
@@ -63,6 +67,7 @@ export default function Contact() {
     details: '',
     contactDetails: ''
   });
+  const [jobOfferLoading, setJobOfferLoading] = useState(false);
 
   const handleJobOfferChange=(e)=>{
     const {name, value}=e.target;
@@ -74,6 +79,7 @@ export default function Contact() {
 
   const handleJobOfferSubmit=async(e)=>{
     e.preventDefault();
+    setJobOfferLoading(true);
     console.log(jobOfferData.employmentType);
     try{
       const response=await axios.post(
@@ -94,6 +100,8 @@ export default function Contact() {
     }catch(e){
       console.error(e);
       alert("Unable to send Message");
+    } finally {
+      setJobOfferLoading(false);
     }
   }
 
@@ -108,6 +116,7 @@ export default function Contact() {
     budget: '',
     timeline: '',
   });
+  const [projectLoading, setProjectLoading] = useState(false);
 
   
   const handleProjectChange=(e)=>{
@@ -120,6 +129,7 @@ export default function Contact() {
 
   const handleProjectSubmit=async(e)=>{
     e.preventDefault();
+    setProjectLoading(true);
 
     try{
       const response=await axios.post(
@@ -142,6 +152,8 @@ export default function Contact() {
     }catch(e){
       console.error(e);
       alert("Unable to send Message");
+    } finally {
+      setProjectLoading(false);
     }
   }
 
@@ -155,6 +167,7 @@ export default function Contact() {
     skills: '',
     contactDetails: ''
   });
+  const [colabLoading, setColabLoading] = useState(false);
 
   const handleColabChange=(e)=>{
     const {name, value}=e.target;
@@ -167,6 +180,7 @@ export default function Contact() {
 
   const handleColabSubmit=async(e)=>{
     e.preventDefault();
+    setColabLoading(true);
 
     try{
       const response=await axios.post(
@@ -187,6 +201,8 @@ export default function Contact() {
     }catch(e){
       console.error(e);
       alert("Unable to send Message");
+    } finally {
+      setColabLoading(false);
     }
   }
 
@@ -302,7 +318,7 @@ export default function Contact() {
                 <textarea required rows={10} name='message' value={generalData.message} onChange={handleGeneralChange}></textarea>
               </div>
               <div className='sm-input'>
-                <input type='submit' value="Send Message" id='submit-btn'></input>
+                <input type='submit' value={generalLoading ? "Sending..." : "Send Message"} id='submit-btn' disabled={generalLoading}></input>
               </div>
             </form>
           </div>
@@ -347,7 +363,7 @@ export default function Contact() {
                 <input type="text" name='contactDetails' value={jobOfferData.contactDetails} onChange={handleJobOfferChange}></input>
               </div>
               <div className='sm-input'>
-                <input type="submit" value="Submit Job Details" id='submit-btn'></input>
+                <input type="submit" value={jobOfferLoading ? "Sending..." : "Submit Job Details"} id='submit-btn' disabled={jobOfferLoading}></input>
               </div>
             </form>
           </div>
@@ -428,7 +444,7 @@ export default function Contact() {
                 <input type="text" name='contactDetails' value={projectData.contactDetails} onChange={handleColabChange}></input>
               </div>
               <div className='sm-input'>
-                <input type="submit" value="Send Collaboration Request" id='submit-btn'></input>
+                <input type="submit" value={colabLoading ? "Sending..." : "Send Collaboration Request"} id='submit-btn' disabled={colabLoading}></input>
               </div>
             </form>
           </div>

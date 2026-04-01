@@ -9,6 +9,7 @@ export default function BookMeeting({ onClose }) {
       document.body.style.overflow = "auto";
     };
   }, []);
+  const [meetingLoading, setMeetingLoading] = useState(false);
   const [meetingData, setMeetingData] = useState({
     name: "",
     email: "",
@@ -31,18 +32,26 @@ export default function BookMeeting({ onClose }) {
 
   const handleMeetingSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post(
-      "http://localhost:8080/request-meeting",
-      meetingData,
-      {
-        headers: {
-          "Content-Type": "application/json",
+    setMeetingLoading(true);
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/request-meeting",
+        meetingData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         },
-      },
-    );
-    if (response) {
-      alert("Request Has Been sent Successfully");
-      onClose();
+      );
+      if (response) {
+        alert("Request Has Been sent Successfully");
+        onClose();
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Unable to send Request");
+    } finally {
+      setMeetingLoading(false);
     }
   };
 
@@ -169,7 +178,7 @@ export default function BookMeeting({ onClose }) {
               />
             </div>
           </div>
-          <button type="submit">Request Now</button>
+          <button type="submit" disabled={meetingLoading}>{meetingLoading ? "Requesting..." : "Request Now"}</button>
         </form>
       </div>
     </div>

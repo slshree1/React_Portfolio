@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import "./About.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import LoadingScreen from "./LoadingScreen";
+
 export default function About() {
   const [profileData, setProfileData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,11 +26,7 @@ export default function About() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="loading-screen">
-        <h2>Loading...</h2>
-      </div>
-    );
+    return <LoadingScreen />;
   }
   return (
     <motion.div

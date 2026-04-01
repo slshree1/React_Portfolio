@@ -27,6 +27,7 @@ export default function StartupIdea({onClose}) {
         lookingFor: [],
         expectedRole: ''
     });
+    const [startupLoading, setStartupLoading] = useState(false);
 
     const handleInputChange=(e)=>{
         const{name, value}=e.target;
@@ -59,22 +60,30 @@ export default function StartupIdea({onClose}) {
 
     const handleStartupSubmit=async(e)=>{
         e.preventDefault();
-        const response=await axios.post(
-            "http://localhost:8080/startup-idea",
-            startupData,
-            {
-                headers: {
-                    "Content-Type": "application/json"
+        setStartupLoading(true);
+        try {
+            const response=await axios.post(
+                "http://localhost:8080/startup-idea",
+                startupData,
+                {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
                 }
-            }
-        );
+            );
 
-        if(response){
-            alert("Request Has Been sent Successfully");
-            onClose();
-        }
-        else{
+            if(response){
+                alert("Request Has Been sent Successfully");
+                onClose();
+            }
+            else{
+                alert("Failed to send the Request");
+            }
+        } catch (e) {
+            console.error(e);
             alert("Failed to send the Request");
+        } finally {
+            setStartupLoading(false);
         }
     }
 
@@ -165,7 +174,7 @@ export default function StartupIdea({onClose}) {
                     </div>
                 </div>
                 
-                <button type='submit'>Submit</button>
+                <button type='submit' disabled={startupLoading}>{startupLoading ? "Submitting..." : "Submit"}</button>
             </form>
         </div>
     </div>

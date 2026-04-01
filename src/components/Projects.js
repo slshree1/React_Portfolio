@@ -2,15 +2,28 @@ import React, { useEffect, useState } from "react";
 import "./Projects.css";
 import { motion } from "framer-motion";
 import axios from "axios";
+import LoadingScreen from "./LoadingScreen";
 
 export default function Project() {
   const [projectData, setProjectData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     axios
       .get("http://localhost:8080/getProjects")
-      .then((res) => setProjectData(res.data))
-      .catch((error) => console.error(error));
+      .then((res) => {
+        setProjectData(res.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <motion.div

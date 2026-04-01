@@ -3,16 +3,29 @@ import { motion } from "framer-motion";
 import "./Experience.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import LoadingScreen from "./LoadingScreen";
 
 export default function Experience() {
   const [experienceData, setExperienceData] = useState([]);
   const [pdfUrl, setPdfUrl] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     axios
       .get("http://localhost:8080/getExperience")
-      .then((res) => setExperienceData(res.data))
-      .catch((error) => console.error(error));
+      .then((res) => {
+        setExperienceData(res.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <motion.div

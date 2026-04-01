@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 import './Education.css'
 import axios from 'axios';
+import LoadingScreen from './LoadingScreen';
 
 export default function Education() {
 
     const [educationData, setEducationData]=useState([]);
     const [showRequestForm, setShowRequestForm]=useState(false);
+    const [loading, setLoading]=useState(true);
     // const [totalYears, setTotalYears]=useState(0);
 
     
@@ -14,9 +16,13 @@ export default function Education() {
         axios.get("http://localhost:8080/getEducation")
         .then((res)=>{
             setEducationData(res.data);
+            setLoading(false);
             // setTotalYears(calculateTotalEducationYears(educationData));
         })
-        .catch((error)=>console.error(error));
+        .catch((error)=>{
+            console.error(error);
+            setLoading(false);
+        });
     }, []);
 
 
@@ -99,6 +105,11 @@ export default function Education() {
             alert("Request did not send successfully");
         }
     }
+
+  if (loading) {
+      return <LoadingScreen />;
+  }
+
   return (
     <motion.div
         initial={{ opacity: 0, y: 20 }}

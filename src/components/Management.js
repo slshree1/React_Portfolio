@@ -9,6 +9,7 @@ export default function Management() {
     const [projectInput, setProjectInput] = useState('');
 
     const [activeTab, setActiveTab]=useState('skills');
+    const [formLoading, setFormLoading] = useState(false);
 
     const handleTabClick=(tabId)=>{
         setActiveTab(tabId);
@@ -112,6 +113,7 @@ export default function Management() {
 
     const handleSkillSubmit= async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
 
         try{
             const response=await axios.post(
@@ -144,6 +146,8 @@ export default function Management() {
         }catch(e){
             console.error(e);
             alert("Unable to save skill(catch)");
+        } finally {
+            setFormLoading(false);
         }
     }
 
@@ -176,6 +180,7 @@ export default function Management() {
     const expDocRef=useRef(null);
     const handleExperienceSubmit= async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
 
         const formData=new FormData();
         formData.append(
@@ -237,6 +242,8 @@ export default function Management() {
         }catch(e){
             console.error(e);
             alert("Unable to add Experience");
+        } finally {
+            setFormLoading(false);
         }
 
     }
@@ -284,6 +291,7 @@ export default function Management() {
 
     const handleProjectSubmit = async (e) => {
         e.preventDefault();
+        setFormLoading(true);
 
         try {
             const response = await axios.post(
@@ -318,6 +326,8 @@ export default function Management() {
         } catch (error) {
             console.error(error);
             alert("Error adding project");
+        } finally {
+            setFormLoading(false);
         }
     };
 
@@ -354,6 +364,7 @@ export default function Management() {
 
     const handleEducationSubmit=async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
 
         const formData=new FormData();
         formData.append(
@@ -412,6 +423,8 @@ export default function Management() {
         }catch(e){
             console.error(e);
             alert("Unable to add education(exception)");
+        } finally {
+            setFormLoading(false);
         }
     }
 
@@ -436,6 +449,7 @@ export default function Management() {
 
     const handleResumeSubmit=async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
 
         const formData= new FormData();
         formData.append(
@@ -474,6 +488,8 @@ export default function Management() {
         }catch(e){
             console.error(e);
             alert("Unable to Update resume(exception)");
+        } finally {
+            setFormLoading(false);
         }
     }
 
@@ -496,6 +512,7 @@ export default function Management() {
 
     const handleProfileSubmit=async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
         const formData= new FormData();
         formData.append(
             "profileData",
@@ -531,6 +548,8 @@ export default function Management() {
         }catch(e){
             console.error(e);
             alert("Unable to Update profile(exception)");
+        } finally {
+            setFormLoading(false);
         }
     }
 
@@ -559,6 +578,7 @@ export default function Management() {
 
     const handleCertificateSubmit=async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
         const formData=new FormData();
         formData.append(
             "certificateData",
@@ -607,6 +627,8 @@ export default function Management() {
             console.error(e);
             console.log("Excpeptional error occured");
             alert("Unable to add certificate");
+        } finally {
+            setFormLoading(false);
         }
     }
 
@@ -637,6 +659,7 @@ export default function Management() {
     }
     const handlePasswordSubmit=async(e)=>{
         e.preventDefault();
+        setFormLoading(true);
 
         const formdata=new FormData();
         formdata.append("oldPassword", passwordData.oldPassword);
@@ -654,6 +677,8 @@ export default function Management() {
         }catch(e){
             console.error(e);
             alert("Error while updating the passwword(exceptoin)");
+        } finally {
+            setFormLoading(false);
         }
 
     }
@@ -801,7 +826,7 @@ export default function Management() {
             </div>
             <br/>
             <div className='mag-submit-button'>
-                <input type="submit" value="+ Add Skill"></input>
+                <input type="submit" value={formLoading ? "Saving..." : "+ Add Skill"} disabled={formLoading}></input>
             </div>
         </form>
       </div>
@@ -936,7 +961,7 @@ export default function Management() {
                 </div>
             </div><br></br>
             <div className='mag-submit-button'>
-                <input type="submit" value="+ Add Experience"></input>
+                <input type="submit" value={formLoading ? "Saving..." : "+ Add Experience"} disabled={formLoading}></input>
             </div>
         </form>
       </div>
@@ -1072,7 +1097,7 @@ export default function Management() {
                 </div>
             </div><br></br>
             <div className='mag-submit-button'>
-                <input type="submit" value="+ Add Project"></input>
+                <input type="submit" value={formLoading ? "Saving..." : "+ Add Project"} disabled={formLoading}></input>
             </div>
         </form>
       </div>
@@ -1159,7 +1184,7 @@ export default function Management() {
                 </div>
             </div><br></br>
              <div className='mag-submit-button'>
-                <input type="submit" value="+ Add Education"></input>
+                <input type="submit" value={formLoading ? "Saving..." : "+ Add Education"} disabled={formLoading}></input>
             </div>
         </form>
       </div>
@@ -1196,8 +1221,8 @@ export default function Management() {
 
              <div className='mag-submit-button'>
                 
-                <button type='submit'>
-                    <i className='fas fa-upload'></i><p>Upload Resume</p>
+                <button type='submit' disabled={formLoading}>
+                    <i className='fas fa-upload'></i><p>{formLoading ? "Saving..." : "Upload Resume"}</p>
                 </button>
             </div>
         </form>
@@ -1231,8 +1256,8 @@ export default function Management() {
             </div><br></br>
              <div className='mag-submit-button'>
                 
-                <button type='submit'>
-                    <i className='fas fa-upload'></i><p>Upload Profile Picture & Heading</p>
+                <button type='submit' disabled={formLoading}>
+                    <i className='fas fa-upload'></i><p>{formLoading ? "Saving..." : "Upload Profile Picture & Heading"}</p>
                 </button>
             </div>
         </form>
@@ -1323,7 +1348,7 @@ export default function Management() {
             </div>
             <br/>
             <div className='mag-submit-button'>
-                <input type="submit" value="+ Add Skill"></input>
+                <input type="submit" value={formLoading ? "Saving..." : "+ Add Certificate"} disabled={formLoading}></input>
             </div>
         </form>
       </div>
@@ -1386,8 +1411,8 @@ export default function Management() {
             </div><br></br>
              <div className='mag-submit-button'>
                 
-                <button type='submit'>
-                    <i className='fas fa-edit'></i><p>Update Password</p>
+                <button type='submit' disabled={formLoading}>
+                    <i className='fas fa-edit'></i><p>{formLoading ? "Saving..." : "Update Password"}</p>
                 </button>
             </div>
         </form>

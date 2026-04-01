@@ -4,16 +4,28 @@ import { motion } from 'framer-motion';
 
 import './Certifications.css';
 import axios from 'axios';
+import LoadingScreen from './LoadingScreen';
 
 export default function Certifications() {
     const [pdfUrl, setPdfUrl]=useState(null);
     const [certificatesData, setCertificatesData]=useState([]);
+    const [loading, setLoading] = useState(true);
  
     useEffect(()=>{
         axios.get("http://localhost:8080/getCertificates")
-        .then((res)=>setCertificatesData(res.data))
-        .catch((error)=>console.error(error));
+        .then((res)=>{
+            setCertificatesData(res.data);
+            setLoading(false);
+        })
+        .catch((error)=>{
+            console.error(error);
+            setLoading(false);
+        });
     },[]);
+    
+    if (loading) {
+        return <LoadingScreen />;
+    }
     
 
     return (

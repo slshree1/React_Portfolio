@@ -7,10 +7,12 @@ export default function Login() {
   const [email, setEmail]=useState("");
   const [pass, setPass]=useState("");
   const [passView, setPassView]=useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async(e) => {
     e.preventDefault();   // prevents page refresh
+    setLoginLoading(true);
 
   
 
@@ -31,12 +33,15 @@ export default function Login() {
     else{
       alert("Invalid Credentials");
     }
+    setLoginLoading(false);
   };
 
   const[showForgotPassword, setShowForgotPassword]=useState(false);
+  const[forgotPasswordLoading, setForgotPasswordLoading]=useState(false);
 
 
   const handleForgotPassword= async()=>{
+    setForgotPasswordLoading(true);
     try{
       const response=await axios.get("http://localhost:8080/forgotPassword");
       if(response.data ===true){
@@ -47,6 +52,8 @@ export default function Login() {
       }
     }catch(error){
       alert("Error sending password. Please try again later.");
+    } finally {
+      setForgotPasswordLoading(false);
     }
   }
 
@@ -76,7 +83,7 @@ export default function Login() {
                 }
               }}></i>
             </div><br/><br/>
-            <button type="submit">Login</button><br/>
+            <button type="submit" disabled={loginLoading}>{loginLoading ? "Logging in..." : "Login"}</button><br/>
           </div>
           <a onClick={()=>setShowForgotPassword(true)}>Forgot Password</a>
         </form>
@@ -92,7 +99,7 @@ export default function Login() {
             <div className='forgot-pass-card-section2'>
               <h2>Forgot Password</h2>
               <p>By Clicking the following button, the password will be sent to Administrator,s email address.</p>
-              <button onClick={handleForgotPassword}>Send Password</button>
+              <button onClick={handleForgotPassword} disabled={forgotPasswordLoading}>{forgotPasswordLoading ? "Sending..." : "Send Password"}</button>
             </div>
           </div>
         </div> 

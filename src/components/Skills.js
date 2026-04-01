@@ -2,32 +2,39 @@ import React, { useEffect, useState } from "react";
 import "./Skills.css";
 import { motion } from "framer-motion";
 import axios from "axios";
+import LoadingScreen from "./LoadingScreen";
 
 export default function Skills() {
   const [skillsData, setSkillsData] = useState([]);
   const [projectCount, setProjectCount] = useState(0);
   const [totalExperience, setTotalExperience] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/getSkills")
-      .then((res) => setSkillsData(res.data))
-      .catch((error) => console.error(error));
+    const fetchData = async () => {
+      try {
+        const [skillsRes, projectsRes, experienceRes] = await Promise.all([
+          axios.get("http://localhost:8080/getSkills"),
+          axios.get("http://localhost:8080/getProjectsCount"),
+          axios.get("http://localhost:8080/getTotalExperience"),
+        ]);
+        
+        setSkillsData(skillsRes.data);
+        setProjectCount(projectsRes.data);
+        setTotalExperience(experienceRes.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/getProjectsCount")
-      .then((res) => setProjectCount(res.data))
-      .catch((error) => console.error(error));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/getTotalExperience")
-      .then((res) => setTotalExperience(res.data))
-      .catch((error) => console.error(error));
-  }, []);
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <motion.div
