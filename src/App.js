@@ -14,7 +14,6 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Management from './components/Management';
 import Certifications from './components/Certifications';
-import React, { useState, useEffect } from "react";
 function AnimatedRoutes(){
 
    
@@ -40,35 +39,15 @@ function AnimatedRoutes(){
 
 
 function App() {
-   const [showPopup, setShowPopup] = useState(true);
-
-    const handleClose = () => {
-      setShowPopup(false);
-    };
-
   return (
     <div>
-      {showPopup && (
-        <div style={popupStyle}>
-          <div style={popupBox}>
-            <h2>Welcome to my website!</h2>
-            <p>This Webpage only contains UI Not Backend</p>
-            <p>Developer is currently Working on it</p>
-            <p>Click OK to view Webpage</p>
-            <button style={popupButton} onClick={handleClose}>OK</button>
-          </div>
+      <Router basename='React_Portfolio'>
+        <Navbar />
+        <div className='mainContent'>
+          <AnimatedRoutes />
         </div>
-      )}
-
-      {!showPopup && (
-        <Router basename='React_Portfolio'>
-          <Navbar />
-          <div className='mainContent'>
-            <AnimatedRoutes />
-          </div>
-          <Footer />
-        </Router>
-      )}
+        <Footer />
+      </Router>
     </div>
 
     
@@ -76,26 +55,4 @@ function App() {
     
   );
 }
-const popupStyle = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundColor: "rgba(0,0,0,0.5)",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-const popupButton={
-  height: "30px",
-  width: "100px",
-  borderRadius: "10px",
-}
-const popupBox = {
-  backgroundColor: "#fff",
-  padding: "20px",
-  borderRadius: "20px",
-  textAlign: "center",
-};
 export default App;
