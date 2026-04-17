@@ -41,7 +41,7 @@ function AnimatedRoutes(){
 function App() {
   return (
     <div>
-      <Router basename='React_Portfolio'>
+      <Router>  {/* Remove basename='React_Portfolio' */}
         <Navbar />
         <div className='mainContent'>
           <AnimatedRoutes />
@@ -49,10 +49,6 @@ function App() {
         <Footer />
       </Router>
     </div>
-
-    
-    
-    
   );
 }
 export default App;
