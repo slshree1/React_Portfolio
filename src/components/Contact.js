@@ -34,7 +34,7 @@ export default function Contact() {
     setGeneralLoading(true);
     try{
       const response=await axios.post(
-        "http://localhost:8080/sendGeneralMessage",
+        "https://portfolio-backend-77cq.onrender.com/sendGeneralMessage",
         generalData,
         {
           headers: {
@@ -83,7 +83,7 @@ export default function Contact() {
     console.log(jobOfferData.employmentType);
     try{
       const response=await axios.post(
-        "http://localhost:8080/sendJobOfferMessage",
+        "https://portfolio-backend-77cq.onrender.com/sendJobOfferMessage",
         jobOfferData,
         {
           headers: {
@@ -133,7 +133,7 @@ export default function Contact() {
 
     try{
       const response=await axios.post(
-        "http://localhost:8080/sendProjectRequest",
+        "https://portfolio-backend-77cq.onrender.com/sendProjectRequest",
         projectData,
         {
           headers: {
@@ -184,7 +184,7 @@ export default function Contact() {
 
     try{
       const response=await axios.post(
-        "http://localhost:8080/sendColabRequest",
+        "https://portfolio-backend-77cq.onrender.com/sendColabRequest",
         colabData,
         {
           headers: {
@@ -457,7 +457,7 @@ export default function Contact() {
           </div>
           <h3>Download Resume</h3>
           <p>Get My complete Resume with all details</p>
-          <a href="http://localhost:8080/downloadResume" class="action-btn">Download PDF</a>
+          <a href="https://portfolio-backend-77cq.onrender.com/downloadResume" class="action-btn">Download PDF</a>
         </div>
         <div className='contact-card'>
           <div className='action-icon'>

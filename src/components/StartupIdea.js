@@ -63,7 +63,7 @@ export default function StartupIdea({onClose}) {
         setStartupLoading(true);
         try {
             const response=await axios.post(
-                "http://localhost:8080/startup-idea",
+                "https://portfolio-backend-77cq.onrender.com/startup-idea",
                 startupData,
                 {
                     headers: {

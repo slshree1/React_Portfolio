@@ -35,7 +35,7 @@ export default function BookMeeting({ onClose }) {
     setMeetingLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8080/request-meeting",
+        "https://portfolio-backend-77cq.onrender.com/request-meeting",
         meetingData,
         {
           headers: {

@@ -13,7 +13,7 @@ export default function Education() {
 
     
     useEffect(()=>{
-        axios.get("http://localhost:8080/getEducation")
+        axios.get("https://portfolio-backend-77cq.onrender.com/getEducation")
         .then((res)=>{
             setEducationData(res.data);
             setLoading(false);
@@ -76,7 +76,7 @@ export default function Education() {
 
         try{
             const response=await axios.post(
-                "http://localhost:8080/sendDocRequest",
+                "https://portfolio-backend-77cq.onrender.com/sendDocRequest",
                 docRequestData,
                 {
                     headers: {
@@ -128,7 +128,7 @@ export default function Education() {
                         <div key={index} className='education-section2-card'>
                             <div className='education-card-heading'>
                                 <div className='education-card-logo'>
-                                        <img  src={`http://localhost:8080/getInstituteLogo/${edu.institutionLogoPath}`} alt={edu.institutionLogoPath} />
+                                        <img  src={`https://portfolio-backend-77cq.onrender.com/getInstituteLogo/${edu.institutionLogoPath}`} alt={edu.institutionLogoPath} />
                                         
                                 </div>
                                 <div className='education-card-heading-content'>
@@ -146,7 +146,7 @@ export default function Education() {
                             <p className='edu-desc'><i className='fas fa-star'></i>CGPA/Percentage: {edu.percentageCgpa}</p>
                             <p className='edu-desc'><i className='fas fa-award'></i>Top 10 performer of college batch</p>
                             <p className='edu-desc'><i className='fas fa-project-diagram'></i>Completed multiple technical projects</p>
-                            <button onClick={ () =>{setPdfUrl(`http://localhost:8080/educationDocuments/${edu.certificatesPath}`); console.log(pdfUrl);}} className='edu-doc-view'>View Documents</button>
+                            <button onClick={ () =>{setPdfUrl(`https://portfolio-backend-77cq.onrender.com/educationDocuments/${edu.certificatesPath}`); console.log(pdfUrl);}} className='edu-doc-view'>View Documents</button>
                         </div>
                     ))
                 }

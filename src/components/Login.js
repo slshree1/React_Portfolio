@@ -17,7 +17,7 @@ export default function Login() {
   
 
     const loginData={email, pass};
-    const response= await fetch("http://localhost:8080/login", {
+    const response= await fetch("https://portfolio-backend-77cq.onrender.com/login", {
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -43,7 +43,7 @@ export default function Login() {
   const handleForgotPassword= async()=>{
     setForgotPasswordLoading(true);
     try{
-      const response=await axios.get("http://localhost:8080/forgotPassword");
+      const response=await axios.get("https://portfolio-backend-77cq.onrender.com/forgotPassword");
       if(response.data ===true){
         alert("Password sent to Admin's email address");
         setShowForgotPassword(false);

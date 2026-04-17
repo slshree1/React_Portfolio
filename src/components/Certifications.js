@@ -12,7 +12,7 @@ export default function Certifications() {
     const [loading, setLoading] = useState(true);
  
     useEffect(()=>{
-        axios.get("http://localhost:8080/getCertificates")
+        axios.get("https://portfolio-backend-77cq.onrender.com/getCertificates")
         .then((res)=>{
             setCertificatesData(res.data);
             setLoading(false);
@@ -71,7 +71,7 @@ export default function Certifications() {
                                     </div>
                                 </div>
                                 <div className='cert-view-btn-container'>
-                                    <button className='cert-view-btn'onClick={()=>setPdfUrl(`http://localhost:8080/educationDocuments/${cert.certificatePath}`)}>View Certificate<i className="fas fa-external-link-alt"></i></button>
+                                    <button className='cert-view-btn'onClick={()=>setPdfUrl(`https://portfolio-backend-77cq.onrender.com/educationDocuments/${cert.certificatePath}`)}>View Certificate<i className="fas fa-external-link-alt"></i></button>
                                 </div>
                             </div>
                         ))

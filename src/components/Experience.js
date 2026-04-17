@@ -12,7 +12,7 @@ export default function Experience() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/getExperience")
+      .get("https://portfolio-backend-77cq.onrender.com/getExperience")
       .then((res) => {
         setExperienceData(res.data);
         setLoading(false);
@@ -61,7 +61,7 @@ export default function Experience() {
               <div className="exp-section2-card" key={index}>
                 <div className="exp-card-heading">
                   <img
-                    src={`http://localhost:8080/getInstituteLogo/${exp.companyLogoPath}`}
+                    src={`https://portfolio-backend-77cq.onrender.com/getInstituteLogo/${exp.companyLogoPath}`}
                     alt="img"
                   ></img>
                   <div className="exp-card-heading-title">
@@ -112,7 +112,7 @@ export default function Experience() {
                   <button
                     onClick={() => {
                       setPdfUrl(
-                        `http://localhost:8080/educationDocuments/${exp.documentsPath}`,
+                        `https://portfolio-backend-77cq.onrender.com/educationDocuments/${exp.documentsPath}`,
                       );
                       console.log(pdfUrl);
                     }}

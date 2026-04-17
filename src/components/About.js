@@ -12,7 +12,7 @@ export default function About() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const profileRes = await axios.get("http://localhost:8080/getProfile");
+        const profileRes = await axios.get("https://portfolio-backend-77cq.onrender.com/getProfile");
 
         setProfileData(profileRes.data);
         setLoading(false);
@@ -49,7 +49,7 @@ export default function About() {
           <div className="box2">
             <div className="image-box">
               <img
-                src={`http://localhost:8080/getProfileImage/${profileData.profilePicturePath}`}
+                src={`https://portfolio-backend-77cq.onrender.com/getProfileImage/${profileData.profilePicturePath}`}
                 alt="img"
               ></img>
             </div>

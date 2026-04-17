@@ -10,7 +10,7 @@ export default function Project() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/getProjects")
+      .get("https://portfolio-backend-77cq.onrender.com/getProjects")
       .then((res) => {
         setProjectData(res.data);
         setLoading(false);

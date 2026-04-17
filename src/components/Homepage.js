@@ -15,9 +15,9 @@ export default function Homepage() {
     const fetchData = async () => {
       try {
         const [profileRes, educationRes, skillRes] = await Promise.all([
-          axios.get("http://localhost:8080/getProfile"),
-          axios.get("http://localhost:8080/getEducation"),
-          axios.get("http://localhost:8080/getSkills"),
+          axios.get("https://portfolio-backend-77cq.onrender.com/getProfile"),
+          axios.get("https://portfolio-backend-77cq.onrender.com/getEducation"),
+          axios.get("https://portfolio-backend-77cq.onrender.com/getSkills"),
         ]);
 
         setProfileData(profileRes.data);
@@ -50,7 +50,7 @@ export default function Homepage() {
           <div className="s11box">
             <div id="slphoto">
               <img
-                src={`http://localhost:8080/getProfileImage/${profileData.profilePicturePath}`}
+                src={`https://portfolio-backend-77cq.onrender.com/getProfileImage/${profileData.profilePicturePath}`}
                 alt="Profile"
               />
             </div>
@@ -59,7 +59,7 @@ export default function Homepage() {
             <h1>{profileData.name}</h1>
             <p>{profileData.heading}</p>
             <a
-              href="http://localhost:8080/downloadResume"
+              href="https://portfolio-backend-77cq.onrender.com/downloadResume"
               download="resume.pdf"
             >
               Download Resume
@@ -152,7 +152,7 @@ export default function Homepage() {
               <div className="education-card" key={index}>
                 <div className="degree-icon">
                   <img
-                    src={`http://localhost:8080/getInstituteLogo/${education.institutionLogoPath}`}
+                    src={`https://portfolio-backend-77cq.onrender.com/getInstituteLogo/${education.institutionLogoPath}`}
                     alt="Institute Logo"
                   />
                 </div>

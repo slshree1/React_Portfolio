@@ -14,9 +14,9 @@ export default function Skills() {
     const fetchData = async () => {
       try {
         const [skillsRes, projectsRes, experienceRes] = await Promise.all([
-          axios.get("http://localhost:8080/getSkills"),
-          axios.get("http://localhost:8080/getProjectsCount"),
-          axios.get("http://localhost:8080/getTotalExperience"),
+          axios.get("https://portfolio-backend-77cq.onrender.com/getSkills"),
+          axios.get("https://portfolio-backend-77cq.onrender.com/getProjectsCount"),
+          axios.get("https://portfolio-backend-77cq.onrender.com/getTotalExperience"),
         ]);
         
         setSkillsData(skillsRes.data);

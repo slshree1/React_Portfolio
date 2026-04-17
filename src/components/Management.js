@@ -22,19 +22,19 @@ export default function Management() {
     let url = "";
 
     if (activeTab === "skills") {
-        url = "http://localhost:8080/getSkills";
+        url = "https://portfolio-backend-77cq.onrender.com/getSkills";
     } else if (activeTab === "experience") {
-        url = "http://localhost:8080/getExperience";
+        url = "https://portfolio-backend-77cq.onrender.com/getExperience";
     } else if (activeTab === "project") {
-        url = "http://localhost:8080/getProjects";
+        url = "https://portfolio-backend-77cq.onrender.com/getProjects";
     } else if (activeTab === "education") {
-        url = "http://localhost:8080/getEducation";
+        url = "https://portfolio-backend-77cq.onrender.com/getEducation";
     } else if (activeTab === "resume") {
-        url = "http://localhost:8080/getResume";
+        url = "https://portfolio-backend-77cq.onrender.com/getResume";
     } else if (activeTab === "profileEdit") {
-        url = "http://localhost:8080/getProfiles";
+        url = "https://portfolio-backend-77cq.onrender.com/getProfiles";
     } else {
-        url = "http://localhost:8080/getCertificates";
+        url = "https://portfolio-backend-77cq.onrender.com/getCertificates";
     }
 
     try {
@@ -60,24 +60,24 @@ export default function Management() {
         let url = "";
 
         if (activeTab === "skills") {
-            url = `http://localhost:8080/deleteSkill/${id}`;
+            url = `https://portfolio-backend-77cq.onrender.com/deleteSkill/${id}`;
         } 
         else if (activeTab === "experience") {
-            url = `http://localhost:8080/deleteExperience/${id}`;
+            url = `https://portfolio-backend-77cq.onrender.com/deleteExperience/${id}`;
         } 
         else if (activeTab === "project") {
-            url = `http://localhost:8080/deleteProject/${id}`;
+            url = `https://portfolio-backend-77cq.onrender.com/deleteProject/${id}`;
         } 
         else if (activeTab === "education") {
-            url = `http://localhost:8080/deleteEducation/${id}`;
+            url = `https://portfolio-backend-77cq.onrender.com/deleteEducation/${id}`;
         } 
         else if(activeTab==="resume"){
-            url = `http://localhost:8080/deleteResume/${id}`;
+            url = `https://portfolio-backend-77cq.onrender.com/deleteResume/${id}`;
         }
         else if(activeTab==="profileEdit"){
-            url=`http://localhost:8080/deleteProfileData/${id}`;
+            url=`https://portfolio-backend-77cq.onrender.com/deleteProfileData/${id}`;
         }else{
-            url=`http://localhost:8080/deleteCertificate/${id}`;
+            url=`https://portfolio-backend-77cq.onrender.com/deleteCertificate/${id}`;
         }
 
         axios.delete(url)
@@ -117,7 +117,7 @@ export default function Management() {
 
         try{
             const response=await axios.post(
-                "http://localhost:8080/saveSkill",
+                "https://portfolio-backend-77cq.onrender.com/saveSkill",
                 skillData,
                 {
                     headers: {
@@ -208,7 +208,7 @@ export default function Management() {
 
         try{
             const response=await axios.post(
-                "http://localhost:8080/saveExperience",
+                "https://portfolio-backend-77cq.onrender.com/saveExperience",
                 formData
             );
             if(response.data===true){
@@ -295,7 +295,7 @@ export default function Management() {
 
         try {
             const response = await axios.post(
-                "http://localhost:8080/saveProject",
+                "https://portfolio-backend-77cq.onrender.com/saveProject",
                 projectData,
                 { headers: { "Content-Type": "application/json" } }
             );
@@ -391,7 +391,7 @@ export default function Management() {
 
         try{
             const response=await axios.post(
-                "http://localhost:8080/saveEducation",
+                "https://portfolio-backend-77cq.onrender.com/saveEducation",
                 formData
             );
             if(response.data===true){
@@ -466,7 +466,7 @@ export default function Management() {
 
         try{
              const response=await axios.post(
-                "http://localhost:8080/updateResume",
+                "https://portfolio-backend-77cq.onrender.com/updateResume",
                 formData
             );
 
@@ -526,7 +526,7 @@ export default function Management() {
         }
         try{
              const response=await axios.post(
-                "http://localhost:8080/updateProfileData",
+                "https://portfolio-backend-77cq.onrender.com/updateProfileData",
                 formData
             );
 
@@ -599,7 +599,7 @@ export default function Management() {
 
         try{
             const response=await axios.post(
-                "http://localhost:8080/saveCertificate",
+                "https://portfolio-backend-77cq.onrender.com/saveCertificate",
                 formData
             );
             if(response){
@@ -666,7 +666,7 @@ export default function Management() {
         formdata.append("newPassword", passwordData.newPassword);
 
         try{
-            const response=await axios.post("http://localhost:8080/updatePassword", formdata);
+            const response=await axios.post("https://portfolio-backend-77cq.onrender.com/updatePassword", formdata);
 
             alert(response.data);
             setPasswordData({
