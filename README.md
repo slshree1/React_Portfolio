@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# 🌟 React Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio website built with **React 19** and deployed on **Render**. It showcases projects, skills, and contact information with smooth animations powered by Framer Motion.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+> Deployed on Render — [View Live](#) *(replace with your Render URL)*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+React_Portfolio/
+├── public/              # Static assets (HTML template, favicon, etc.)
+├── src/                 # React source code
+│   └── ...              # Components, pages, styles
+├── .gitignore
+├── package.json
+├── render.yaml          # Render deployment config
+└── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Technology | Purpose |
+|---|---|
+| React 19 | UI library |
+| React Router DOM v7 | Client-side routing |
+| Framer Motion | Animations & transitions |
+| Lucide React | Icon library |
+| Axios | HTTP requests |
+| CSS | Styling |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (v16 or higher)
+- npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone the repository
+git clone https://github.com/slshree1/React_Portfolio.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Navigate into the project
+cd React_Portfolio
 
-## Learn More
+# Install dependencies
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+Opens the app at [http://localhost:3000](http://localhost:3000). The page reloads automatically on changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Building for Production
 
-### Analyzing the Bundle Size
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Outputs an optimized production build to the `build/` folder.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ☁️ Deployment
 
-### Advanced Configuration
+This project is configured for deployment on **[Render](https://render.com)** using `render.yaml`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Configuration:**
+- **Type:** Static site
+- **Build Command:** `npm install && npm run build`
+- **Publish Directory:** `./build`
+- **SPA Routing:** All routes rewrite to `/index.html`
 
-### Deployment
+To deploy your own instance, connect this repo to Render and it will auto-detect the `render.yaml` config.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📜 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Script | Description |
+|---|---|
+| `npm start` | Run the app in development mode |
+| `npm test` | Launch the test runner |
+| `npm run build` | Build the app for production |
+| `npm run deploy` | Deploy to GitHub Pages |
+| `npm run eject` | Eject from Create React App |
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+**slshree1**  
+GitHub: [@slshree1](https://github.com/slshree1)
